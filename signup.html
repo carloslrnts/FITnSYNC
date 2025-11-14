@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FITnSYNC - Sign Up</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="css/output.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+<body class="h-screen flex font-[Poppins]">
+
+  <div class="hidden md:flex w-1/4 bg-cover bg-center relative"
+       style="background-image: url('assets/loginSign.png');">
+    <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-white text-center px-6">
+      <h1 class="text-4xl font-bold leading-tight tracking-wide">
+        STAY<br>FIT<br>AND<br>HEALTHY
+      </h1>
+    </div>
+  </div>
+
+  <div class="w-full md:w-3/4 flex flex-col justify-center items-center bg-gradient-to-r from-[#0e1214] to-[#1d2528] text-white p-8">
+    <div class="w-full max-w-md">
+      <h2 class="text-center text-3xl font-bold mb-2">SIGN UP</h2>
+      <div class="h-1 w-16 bg-yellow-500 mx-auto mb-6"></div>
+      <h3 class="text-center text-xl font-semibold">Welcome!</h3>
+      <p class="text-center text-gray-400 mb-6">Create Your Account Below</p>
+
+      <form id="signupForm">
+        <input type="text" placeholder="Username" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 mb-3 focus:ring-2 focus:ring-yellow-500 placeholder-gray-400 text-white">
+        <input type="email" placeholder="Email" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 mb-3 focus:ring-2 focus:ring-yellow-500 placeholder-gray-400 text-white">
+        <input type="password" placeholder="Password" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 mb-3 focus:ring-2 focus:ring-yellow-500 placeholder-gray-400 text-white">
+        <input type="password" placeholder="Confirm Password" class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 mb-4 focus:ring-2 focus:ring-yellow-500 placeholder-gray-400 text-white">
+
+        <button type="submit"
+          class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 rounded-lg transition-all duration-300">
+          SIGN UP
+        </button>
+
+        <p class="text-center text-gray-400 text-sm mt-6">
+          Already have an account?
+          <a href="login.html" class="text-yellow-500 hover:underline">Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", handleSignup);
+  </script>
+</body>
+</html>

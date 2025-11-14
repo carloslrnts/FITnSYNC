@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FITnSYNC - Login</title>
+
+  <!-- Font & Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="css/output.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+</head>
+<body class="h-screen flex font-[Poppins]">
+
+  <!-- Left section (gambar) -->
+  <div class="hidden md:flex w-1/4 bg-cover bg-center relative"
+       style="background-image: url('assets/loginSign.png');">
+    <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-white text-center px-6">
+      <h1 class="text-4xl font-bold leading-tight tracking-wide">
+        STAY<br>FIT<br>AND<br>HEALTHY
+      </h1>
+    </div>
+  </div>
+
+  <!-- Right section (form login) -->
+  <div class="w-full md:w-3/4 flex flex-col justify-center items-center bg-gradient-to-r from-[#0e1214] to-[#1d2528] text-white p-8">
+    <div class="w-full max-w-md">
+      <h2 class="text-center text-3xl font-bold mb-2">LOGIN</h2>
+      <div class="h-1 w-16 bg-yellow-500 mx-auto mb-6"></div>
+      <h3 class="text-center text-xl font-semibold">Welcome Back!</h3>
+      <p class="text-center text-gray-400 mb-6">Please log in to continue</p>
+
+      <form id="loginForm">
+        <input type="text" placeholder="Username"
+          class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 mb-3 focus:ring-2 focus:ring-yellow-500 placeholder-gray-400 text-white">
+        <input type="password" placeholder="Password"
+          class="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 mb-4 focus:ring-2 focus:ring-yellow-500 placeholder-gray-400 text-white">
+
+        <div class="flex justify-between items-center mb-5 text-sm text-gray-400">
+          <label><input type="checkbox" class="mr-2"> Remember me</label>
+          <a href="#" class="text-yellow-500 hover:underline">Forgot password?</a>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 rounded-lg transition-all duration-300">
+          LOGIN
+        </button>
+
+        <p class="text-center text-gray-400 text-sm mt-6">
+          Don’t have an account?
+          <a href="signup.html" class="text-yellow-500 hover:underline">Sign Up</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="js/auth.js"></script>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", handleLogin);
+  </script>
+
+</body>
+</html>
