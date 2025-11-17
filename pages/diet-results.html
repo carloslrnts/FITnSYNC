@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FITnSYNC – Your Results</title>
+
+    <!-- Fonts & Tailwind CSS -->
+    <link href="../css/output.css" rel="stylesheet" />
+    <link href="../css/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="font-[Poppins] text-white bg-[#111827]">
+    <!-- Navbar (Consistent with other pages but on a solid background) -->
+    <header class="relative z-10 flex justify-between items-center px-10 py-5">
+      <a href="/dashboard.html" class="text-2xl font-extrabold tracking-wide">
+        <span class="text-white">FIT</span
+        ><span class="text-yellow-400">nSYNC</span>
+      </a>
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#" class="hover:text-yellow-400 transition">Schedule</a>
+        <a href="#" class="hover:text-yellow-400 transition"
+          >Ask a Personal Trainer</a
+        >
+        <a href="#" class="hover:text-yellow-400 transition">Smart Scan</a>
+        <a href="/fitness.html" class="hover:text-yellow-400 transition"
+          >Fitness Programs</a
+        >
+        <a
+          href="/diet.html"
+          class="text-yellow-400 hover:text-yellow-400 transition"
+          >Diet Recommendations</a
+        >
+      </nav>
+      <div class="flex items-center gap-4">
+        <a
+          href="/profile.html"
+          class="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full border border-gray-500 hover:bg-white/20 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="white"
+            class="w-5 h-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.25a8.25 8.25 0 0115 0"
+            />
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="px-10 py-12 md:px-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Left Column: Your Results -->
+        <div class="w-full">
+          <h1 class="text-3xl font-bold mb-2">Your Results</h1>
+          <p class="text-gray-400 mb-8">
+            The results show a number of daily calorie estimates to be consumed.
+          </p>
+
+          <div class="space-y-4">
+            <!-- Result Item: Maintain Weight -->
+            <div class="flex">
+              <span
+                class="bg-yellow-500 text-black font-semibold w-1/3 py-3 text-center rounded-l-md"
+                >Maintain Weight</span
+              >
+              <span
+                class="bg-gray-800 text-white w-2/3 py-3 text-center rounded-r-md"
+                >999 calories/day</span
+              >
+            </div>
+
+            <!-- Result Item: Mild Weight Loss -->
+            <div class="flex">
+              <span
+                class="bg-yellow-500 text-black font-semibold w-1/3 py-3 text-center rounded-l-md"
+                >Mild Weight Loss</span
+              >
+              <span
+                class="bg-gray-800 text-white w-2/3 py-3 text-center rounded-r-md"
+                >999 calories/day</span
+              >
+            </div>
+
+            <!-- Result Item: Weight Loss -->
+            <div class="flex">
+              <span
+                class="bg-yellow-500 text-black font-semibold w-1/3 py-3 text-center rounded-l-md"
+                >Weight Loss</span
+              >
+              <span
+                class="bg-gray-800 text-white w-2/3 py-3 text-center rounded-r-md"
+                >999 calories/day</span
+              >
+            </div>
+
+            <!-- Result Item: Extreme Weight Loss -->
+            <div class="flex">
+              <span
+                class="bg-yellow-500 text-black font-semibold w-1/3 py-3 text-center rounded-l-md"
+                >Extreme Weight Loss</span
+              >
+              <span
+                class="bg-gray-800 text-white w-2/3 py-3 text-center rounded-r-md"
+                >999 calories/day</span
+              >
+            </div>
+
+            <!-- Save Button -->
+            <button
+              class="w-full bg-yellow-500 text-black font-bold py-3 rounded-md hover:bg-yellow-600 transition-all duration-300 mt-6"
+            >
+              Save Results
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Food List -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Food List</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Food Item -->
+            <div class="relative rounded-lg overflow-hidden cursor-pointer">
+              <img
+                src="/assets/food/chicken-breast.png"
+                alt="Chicken Breast"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 flex items-end justify-center pb-2"
+              >
+                <span class="font-semibold">Chicken Breast</span>
+              </div>
+            </div>
+            <!-- Food Item -->
+            <div class="relative rounded-lg overflow-hidden cursor-pointer">
+              <img
+                src="/assets/food/chicken-breast.png"
+                alt="Chicken Breast"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 flex items-end justify-center pb-2"
+              >
+                <span class="font-semibold">Chicken Breast</span>
+              </div>
+            </div>
+            <!-- Food Item -->
+            <div class="relative rounded-lg overflow-hidden cursor-pointer">
+              <img
+                src="/assets/food/chicken-breast.png"
+                alt="Chicken Breast"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 flex items-end justify-center pb-2"
+              >
+                <span class="font-semibold">Chicken Breast</span>
+              </div>
+            </div>
+            <!-- Food Item -->
+            <div class="relative rounded-lg overflow-hidden cursor-pointer">
+              <img
+                src="/assets/food/chicken-breast.png"
+                alt="Chicken Breast"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-black/40 flex items-end justify-center pb-2"
+              >
+                <span class="font-semibold">Chicken Breast</span>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="text-yellow-500 font-semibold mt-4 inline-block"
+            >See More</a
+          >
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

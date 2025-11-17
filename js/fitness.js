@@ -10,7 +10,6 @@ if (!currentUser) {
 
 // Saat halaman selesai dimuat
 document.addEventListener("DOMContentLoaded", () => {
-
   // Tampilkan username di navbar
   const nameSpan = document.getElementById("profileName");
   if (nameSpan && currentUser.username) {
@@ -36,6 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // CLICK HANDLER – STRENGTH TRAINING
+  const strengthTrainingCard = document.querySelector(".strength-card");
+  const learnMoreStrength = document.querySelector(".learnmore-strength");
+
+  // klik seluruh card
+  if (strengthTrainingCard) {
+    strengthTrainingCard.addEventListener("click", () => {
+      window.location.href = "pages/strength.html";
+    });
+  }
+
+  // klik tombol Learn More → jangan trigger klik card
+  if (learnMoreStrength) {
+    learnMoreStrength.addEventListener("click", (e) => {
+      e.stopPropagation();
+      window.location.href = "pages/strength.html";
+    });
+  }
 });
 
 // Fungsi untuk program lainnya (opsi)

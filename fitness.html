@@ -1,145 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FITnSYNC – Fitness Programs</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FITnSYNC – Fitness Programs</title>
+    <link href="css/output.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+  </head>
 
-  <link href="css/output.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
+  <body class="bg-[#0f1a1c] text-white font-[Poppins]">
+    <!-- NAVBAR -->
+    <header
+      class="relative z-20 w-full flex items-center justify-between px-10 py-5 bg-transparent text-white"
+    >
+      <!-- LEFT: BACK -->
+      <div class="flex items-center gap-0.5">
+        <a
+          href="dashboard.html"
+          class="text-yellow-400 text-base font-semibold hover:underline"
+        >
+          BACK
+        </a>
+      </div>
 
-<body class="bg-[#0f1a1c] text-white font-[Poppins]">
+      <!-- CENTER NAV -->
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#" class="hover:text-yellow-400 transition">Schedule</a>
+        <a href="#" class="hover:text-yellow-400 transition"
+          >Ask a Personal Trainer</a
+        >
+        <a href="#" class="hover:text-yellow-400 transition">Smart Scan</a>
+        <a
+          href="fitness.html"
+          class="hover:text-yellow-400 transition text-yellow-400"
+          >Fitness Programs</a
+        >
+        <a href="diet.html" class="hover:text-yellow-400 transition"
+          >Diet Recommendations</a
+        >
+      </nav>
 
-  <!-- NAVBAR -->
-  <header class="relative z-20 w-full flex items-center justify-between px-10 py-5 bg-transparent text-white">
+      <!-- RIGHT: USER -->
+      <div class="flex items-center gap-2">
+        <span id="profileName" class="text-white text-sm"></span>
+        <a
+          href="profile.html"
+          class="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full border border-gray-500 hover:bg-white/20 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="white"
+            class="w-5 h-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.25a8.25 8.25 0 0115 0"
+            />
+          </svg>
+        </a>
+      </div>
+    </header>
 
-    <!-- LEFT: BACK -->
-    <div class="flex items-center gap-0.5">
-      <a href="dashboard.html" class="text-yellow-400 text-base font-semibold hover:underline">
-        BACK
-      </a>
-    </div>
-
-
-    <!-- CENTER NAV -->
-    <nav class="hidden md:flex gap-8 text-sm font-medium">
-      <a href="#" class="hover:text-yellow-400 transition">Schedule</a>
-      <a href="#" class="hover:text-yellow-400 transition">Ask a Personal Trainer</a>
-      <a href="#" class="hover:text-yellow-400 transition">Smart Scan</a>
-      <a href="#" class="hover:text-yellow-400 transition text-yellow-400">Fitness Programs</a>
-      <a href="#" class="hover:text-yellow-400 transition">Diet Recommendations</a>
-    </nav>
-
-    <!-- RIGHT: USER -->
-    <div class="flex items-center gap-2">
-      <span id="profileName" class="text-white text-sm"></span>
-      <a href="profile.html"
-        class="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full border border-gray-500 hover:bg-white/20 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
-          class="w-5 h-5">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.25a8.25 8.25 0 0115 0" />
-        </svg>
-      </a>
-    </div>
-
-  </header>
-
-  <!-- Title -->
-  <div class="px-10">
-    <h1 class="text-xl font-bold">FITNESS PROGRAMS</h1>
-    <div class="flex items-center gap-4 mt-1">
-      <h2 class="text-3xl font-bold">Get Fit With Our Programs</h2>
-      <div class="h-1 bg-yellow-500 w-[200px]"></div>
-    </div>
-  </div>
-
-  <!-- GRID 2x2 -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
-
-    <!-- Card Reusable Class -->
-    <style>
-      .card {
-        position: relative;
-        height: 260px;
-        border-radius: 12px;
-        overflow: hidden;
-      }
-
-      .card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(60%);
-        transition: 0.3s;
-      }
-
-      .card:hover img {
-        filter: brightness(45%);
-        transform: scale(1.05);
-      }
-
-      .card-content {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-      }
-    </style>
-
-    <!-- WEIGHT LOSS -->
-    <div class="card weightloss-card cursor-pointer">
-      <img src="assets/weightloss.png">
-
-      <div class="card-content">
-        <h3 class="text-xl font-bold">Weight Loss</h3>
-        <p class="text-sm text-gray-300 mb-3">
-          A structured program designed to help participants lose weight effectively.
-        </p>
-
-        <button class="learnmore-weightloss bg-yellow-500 text-black px-4 py-2 text-sm font-semibold rounded">
-          LEARN MORE
-        </button>
+    <!-- Title -->
+    <div class="px-10">
+      <h1 class="text-xl font-bold">FITNESS PROGRAMS</h1>
+      <div class="flex items-center gap-4 mt-1">
+        <h2 class="text-3xl font-bold">Get Fit With Our Programs</h2>
+        <div class="h-1 bg-yellow-500 w-[200px]"></div>
       </div>
     </div>
 
+    <!-- GRID 2x2 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 p-10">
+      <!-- Card Reusable Class -->
+      <style>
+        .card {
+          position: relative;
+          height: 260px;
+          border-radius: 12px;
+          overflow: hidden;
+        }
 
-    <!-- HIIT -->
-    <div class="card">
-      <img src="assets/hiit.png">
-      <div class="card-content">
-        <h3 class="text-xl font-bold">High Intensity Interval Training</h3>
-        <p class="text-sm text-gray-300 mb-3">Intense interval training to burn calories quickly and efficiently.</p>
-        <button class="bg-yellow-500 text-black px-4 py-2 text-sm font-semibold rounded">LEARN MORE</button>
+        .card img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: brightness(60%);
+          transition: 0.3s;
+        }
+
+        .card:hover img {
+          filter: brightness(45%);
+          transform: scale(1.05);
+        }
+
+        .card-content {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          right: 20px;
+        }
+      </style>
+
+      <!-- WEIGHT LOSS -->
+      <div class="card weightloss-card cursor-pointer">
+        <img src="assets/weightloss.png" />
+
+        <div class="card-content">
+          <h3 class="text-xl font-bold">Weight Loss</h3>
+          <p class="text-sm text-gray-300 mb-3">
+            A structured program designed to help participants lose weight
+            effectively.
+          </p>
+
+          <button
+            class="learnmore-weightloss bg-yellow-500 text-black px-4 py-2 text-sm font-semibold rounded"
+          >
+            LEARN MORE
+          </button>
+        </div>
+      </div>
+
+      <!-- HIIT -->
+      <div class="card">
+        <img src="assets/hiit.png" />
+        <div class="card-content">
+          <h3 class="text-xl font-bold">High Intensity Interval Training</h3>
+          <p class="text-sm text-gray-300 mb-3">
+            Intense interval training to burn calories quickly and efficiently.
+          </p>
+          <button
+            class="bg-yellow-500 text-black px-4 py-2 text-sm font-semibold rounded"
+          >
+            LEARN MORE
+          </button>
+        </div>
+      </div>
+
+      <!-- STRENGTH -->
+      <div class="card strength-card cursor-pointer">
+        <img src="assets/strength.png" />
+        <div class="card-content">
+          <h3 class="text-xl font-bold">Strength Training</h3>
+          <p class="text-sm text-gray-300 mb-3">
+            Training aimed at improving strength and muscle mass.
+          </p>
+          <button
+            class="learnmore-strength bg-yellow-500 text-black px-4 py-2 text-sm font-semibold rounded"
+          >
+            LEARN MORE
+          </button>
+        </div>
+      </div>
+
+      <!-- BODYWEIGHT -->
+      <div class="card">
+        <img src="assets/bodyweight.png" />
+        <div class="card-content">
+          <h3 class="text-xl font-bold">Bodyweight Workout</h3>
+          <p class="text-sm text-gray-300 mb-3">
+            Exercises using your own body weight for agility and endurance.
+          </p>
+          <button
+            class="bg-yellow-500 text-black px-4 py-2 text-sm font-semibold rounded"
+          >
+            LEARN MORE
+          </button>
+        </div>
       </div>
     </div>
 
-    <!-- STRENGTH -->
-    <div class="card">
-      <img src="assets/strength.png">
-      <div class="card-content">
-        <h3 class="text-xl font-bold">Strength Training</h3>
-        <p class="text-sm text-gray-300 mb-3">Training aimed at improving strength and muscle mass.</p>
-        <button class="bg-yellow-500 text-black px-4 py-2 text-sm font-semibold rounded">LEARN MORE</button>
-      </div>
-    </div>
-
-    <!-- BODYWEIGHT -->
-    <div class="card">
-      <img src="assets/bodyweight.png">
-      <div class="card-content">
-        <h3 class="text-xl font-bold">Bodyweight Workout</h3>
-        <p class="text-sm text-gray-300 mb-3">Exercises using your own body weight for agility and endurance.</p>
-        <button class="bg-yellow-500 text-black px-4 py-2 text-sm font-semibold rounded">LEARN MORE</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Script -->
-  <script src="js/fitness.js"></script>
-</body>
-
+    <!-- Script -->
+    <script src="js/fitness.js"></script>
+  </body>
 </html>
