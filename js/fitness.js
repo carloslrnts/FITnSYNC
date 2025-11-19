@@ -53,6 +53,25 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "pages/strength.html";
     });
   }
+
+  // CLICK HANDLER – HIIT
+  const hiitTrainingCard = document.querySelector(".hiit-card");
+  const learnMoreHiit = document.querySelector(".learnmore-hiit");
+
+  // klik seluruh card
+  if (hiitTrainingCard) {
+    hiitTrainingCard.addEventListener("click", () => {
+      window.location.href = "pages/hiit.html";
+    });
+  }
+
+  // klik tombol Learn More → jangan trigger klik card
+  if (learnMoreHiit) {
+    learnMoreHiit.addEventListener("click", (e) => {
+      e.stopPropagation();
+      window.location.href = "pages/hiit.html";
+    });
+  }
 });
 
 // Fungsi untuk program lainnya (opsi)
