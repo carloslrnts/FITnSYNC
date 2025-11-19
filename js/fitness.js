@@ -72,6 +72,27 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "pages/hiit.html";
     });
   }
+
+  // CLICK HANDLER – Bodyweight Workout
+  const bodyweightTrainingCard = document.querySelector(".bodyweightwork-card");
+  const learnMoreBodyweightWork = document.querySelector(
+    ".learnmore-bodyweightwork"
+  );
+
+  // klik seluruh card
+  if (bodyweightTrainingCard) {
+    bodyweightTrainingCard.addEventListener("click", () => {
+      window.location.href = "pages/bodyweightwork.html";
+    });
+  }
+
+  // klik tombol Learn More → jangan trigger klik card
+  if (learnMoreBodyweightWork) {
+    learnMoreBodyweightWork.addEventListener("click", (e) => {
+      e.stopPropagation();
+      window.location.href = "pages/bodyweightwork.html";
+    });
+  }
 });
 
 // Fungsi untuk program lainnya (opsi)
