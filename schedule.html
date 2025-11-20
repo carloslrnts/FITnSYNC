@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Schedule – FITnSYNC</title>
+
+  <!-- Tailwind + custom (sesuaikan path jika perlu) -->
+  <link href="../css/output.css" rel="stylesheet">
+  <link href="../css/custom.css" rel="stylesheet">
+</head>
+<body class="bg-[#0f1a1c] text-white">
+
+  <!-- NAVBAR (sama style proyek) -->
+  <nav class="w-full px-8 py-4 flex items-center justify-between bg-gradient-to-r from-[#0e1b2c] to-[#073b39] border-b border-yellow-500">
+    <h1 class="text-2xl font-bold">FITnSYNC</h1>
+
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="../schedule.html" class="text-yellow-400">Schedule</a>
+      <a href="../personal-trainer.html" class="hover:text-yellow-400">Ask a Personal Trainer</a>
+      <a href="#" class="hover:text-yellow-400">Smart Scan</a>
+      <a href="../fitness.html" class="hover:text-yellow-400">Fitness Programs</a>
+      <a href="../diet.html" class="hover:text-yellow-400">Diet Recommendations</a>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <span id="profileName" class="text-white text-sm"></span>
+      <a href="../profile.html" class="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full border border-gray-500 hover:bg-white/20 transition">
+        <!-- user icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.25a8.25 8.25 0 0115 0" />
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="flex gap-8 px-10 py-10">
+    <!-- Calendar (left) -->
+    <section class="w-2/3 bg-white/5 p-6 rounded-xl border border-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <button id="prevMonth" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded">←</button>
+        <h2 id="monthLabel" class="text-xl font-bold"></h2>
+        <button id="nextMonth" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded">→</button>
+      </div>
+
+      <div class="grid grid-cols-7 text-center font-semibold text-gray-300 mb-2">
+        <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+      </div>
+
+      <div id="calendarGrid" class="grid grid-cols-7 gap-2"></div>
+    </section>
+
+    <!-- Details (right) -->
+    <aside class="w-1/3 bg-white/5 p-6 rounded-xl border border-white/10 flex flex-col">
+      <div class="flex justify-between items-start">
+        <div>
+          <h2 id="detailDate" class="text-xl font-bold">Select a date</h2>
+          <p id="detailSub" class="text-gray-400 text-sm">Click a date on the calendar to view workouts.</p>
+        </div>
+        <button id="addWorkoutBtn" class="ml-4 bg-yellow-500 hover:bg-yellow-600 text-black px-3 py-2 rounded">+ Add</button>
+      </div>
+
+      <div id="workoutList" class="mt-6 space-y-4 text-gray-300 flex-1 overflow-auto">
+        <p>No workout selected.</p>
+      </div>
+
+      <!-- detail area for selected workout (shows description & video link) -->
+      <div id="selectedWorkoutDetail" class="mt-4 hidden p-3 bg-white/6 rounded border border-white/5">
+        <h3 id="selName" class="font-semibold"></h3>
+        <p id="selDesc" class="text-sm text-gray-300"></p>
+        <p id="selDur" class="text-sm text-gray-400 mt-2"></p>
+        <a id="selVideo" class="text-yellow-400 text-sm hover:underline" target="_blank" rel="noopener">Watch video</a>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Add Workout Modal -->
+  <div id="modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+    <div class="bg-[#0f1720] rounded-lg w-[520px] p-6 border border-white/10">
+      <h3 class="text-lg font-bold mb-3">Add Workout</h3>
+
+      <form id="addForm" class="space-y-3">
+        <div>
+          <label class="text-sm text-gray-300">Date</label>
+          <input id="modalDate" type="date" class="w-full bg-white/5 p-2 rounded mt-1 text-white" required>
+        </div>
+
+        <div>
+          <label class="text-sm text-gray-300">Program</label>
+          <select id="programSelect" class="w-full bg-white/5 p-2 rounded mt-1 text-white">
+            <option value="weightloss">Weight Loss</option>
+            <option value="hiit">HIIT</option>
+            <option value="strength">Strength Training</option>
+            <option value="bodyweight">Bodyweight</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="text-sm text-gray-300">Workout</label>
+          <select id="workoutSelect" class="w-full bg-white/5 p-2 rounded mt-1 text-white"></select>
+          <input id="customName" type="text" placeholder="Custom name (if custom)" class="w-full bg-white/5 p-2 rounded mt-2 text-white hidden">
+        </div>
+
+        <div>
+          <label class="text-sm text-gray-300">Description</label>
+          <textarea id="descInput" rows="2" class="w-full bg-white/5 p-2 rounded mt-1 text-white" placeholder="Short description (optional)"></textarea>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="text-sm text-gray-300">Duration (min)</label>
+            <input id="durInput" type="number" min="0" class="w-full bg-white/5 p-2 rounded mt-1 text-white" placeholder="e.g. 30">
+          </div>
+          <div>
+            <label class="text-sm text-gray-300">Video URL</label>
+            <input id="videoInput" type="url" class="w-full bg-white/5 p-2 rounded mt-1 text-white" placeholder="https://youtube.com/...">
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-2 mt-4">
+          <button type="button" id="cancelBtn" class="px-4 py-2 rounded bg-white/10 hover:bg-white/20">Cancel</button>
+          <button type="submit" class="px-4 py-2 rounded bg-yellow-500 text-black font-bold">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Small note with design file path (local) -->
+  <!-- design: /mnt/data/FITnSYNC Entre Market Validation.pdf -->
+
+  <script src="../js/schedule.js"></script>
+</body>
+</html>
