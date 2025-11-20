@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FITnSYNC – Contact a Personal Trainer</title>
+
+    <link href="css/output.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-[#0f1a1c] text-white font-[Poppins]">
+    <!-- Navbar -->
+    <header class="relative z-10 flex justify-between items-center px-10 py-5">
+      <a href="dashboard.html" class="text-2xl font-extrabold tracking-wide">
+        <span class="text-white">FIT</span
+        ><span class="text-yellow-400">nSYNC</span>
+      </a>
+
+      <!-- CENTER NAV -->
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#" class="hover:text-yellow-400 transition">Schedule</a>
+        <a
+          href="personal-trainer.html"
+          class="hover:text-yellow-400 transition text-yellow-400"
+          >Ask a Personal Trainer</a
+        >
+        <a href="#" class="hover:text-yellow-400 transition">Smart Scan</a>
+        <a href="fitness.html" class="hover:text-yellow-400 transition"
+          >Fitness Programs</a
+        >
+        <a href="diet.html" class="hover:text-yellow-400 transition"
+          >Diet Recommendations</a
+        >
+      </nav>
+
+      <!-- RIGHT: USER -->
+      <div class="flex items-center gap-2">
+        <span id="profileName" class="text-white text-sm"></span>
+        <a
+          href="profile.html"
+          class="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full border border-gray-500 hover:bg-white/20 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="white"
+            class="w-5 h-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.25a8.25 8.25 0 0115 0"
+            />
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Title Section -->
+    <div class="px-10 pt-4 pb-8">
+      <h1 class="text-3xl font-bold text-white">Ask a personal trainer</h1>
+      <div class="flex items-center gap-4 mt-2">
+        <h2 class="text-lg text-gray-300">
+          Get in touch with the best PTs to assist you in your journey
+        </h2>
+      </div>
+    </div>
+
+    <!-- TRAINER LIST CONTAINER -->
+    <div class="px-10 space-y-8 pb-20">
+      <!-- PT 1 -->
+      <div
+        class="group flex flex-col md:flex-row items-start gap-6 p-4 rounded-xl hover:bg-white/5 transition border border-transparent hover:border-gray-700"
+      >
+        <!-- Image -->
+        <img
+          src="assets/trainer1.png"
+          alt="Amir Hasan"
+          class="w-1/4 md:w-52 h-36 object-cover rounded-lg shadow-lg brightness-90 group-hover:brightness-100 transition"
+        />
+
+        <!-- Info -->
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold text-yellow-400 mb-1">Amir Hasan</h3>
+          <p class="text-sm text-gray-400 mb-3">
+            <span class="text-white font-semibold">Specialist:</span>
+            Weightlifting & Bodyweight Training
+          </p>
+
+          <div class="space-y-1 text-sm text-gray-300">
+            <p class="flex items-center gap-2">
+              <span class="text-yellow-500">📍</span> Grogol, West Jakarta
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-yellow-500">📞</span> +62 87877650718
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-yellow-500">✉️</span> amirhasan@gmail.com
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PT 2-->
+      <div
+        class="group flex flex-col md:flex-row items-start gap-6 p-4 rounded-xl hover:bg-white/5 transition border border-transparent hover:border-gray-700"
+      >
+        <img
+          src="assets/trainer2.png"
+          alt="Andi Setiawan"
+          class="w-1/4 md:w-52 h-36 object-cover rounded-lg shadow-lg brightness-90 group-hover:brightness-100 transition"
+        />
+
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold text-yellow-400 mb-1">Andi Setiawan</h3>
+          <p class="text-sm text-gray-400 mb-3">
+            <span class="text-white font-semibold">Specialist:</span> Strength &
+            Hypertrophy
+          </p>
+
+          <div class="space-y-1 text-sm text-gray-300">
+            <p class="flex items-center gap-2">
+              <span class="text-yellow-500">📍</span> Palmerah, West Jakarta
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-yellow-500">📞</span> +62 81256567731
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-yellow-500">✉️</span> andisetiawan1@gmail.com
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PT 3: Emily -->
+      <div
+        class="group flex flex-col md:flex-row items-start gap-6 p-4 rounded-xl hover:bg-white/5 transition border border-transparent hover:border-gray-700"
+      >
+        <img
+          src="assets/trainer3.png"
+          alt="Steven Wijaya"
+          class="w-1/4 md:w-52 h-36 object-cover rounded-lg shadow-lg brightness-90 group-hover:brightness-100 transition"
+        />
+
+        <div class="flex-1">
+          <h3 class="text-2xl font-bold text-yellow-400 mb-1">Steven Wijaya</h3>
+          <p class="text-sm text-gray-400 mb-3">
+            <span class="text-white font-semibold">Specialist:</span> Cardio &
+            Weight Loss
+          </p>
+
+          <div class="space-y-1 text-sm text-gray-300">
+            <p class="flex items-center gap-2">
+              <span class="text-yellow-500">📍</span> Kebon Jeruk, West Jakarta
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-yellow-500">📞</span> +62 82102617756
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-yellow-500">✉️</span> vincentwijaya@gmail.com
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/personal-trainer.js"></script>
+  </body>
+</html>
