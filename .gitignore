@@ -1,9 +1,6 @@
 # Node modules
 node_modules/
 
-# Tailwind output
-css/output.css
-
 # System files
 .DS_Store
 Thumbs.db
